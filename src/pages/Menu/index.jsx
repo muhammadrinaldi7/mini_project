@@ -5,6 +5,8 @@ import { getAllMenu } from "../../services/MenuService"
 export const Menu = () => {
   const [menu, setMenu] = useState([])
   const [pageMenu, setPageMenu] = useState([])
+  const [filterMenu, setFilterMenu] = useState("")
+  const [loading, setLoading] = useState(false)
   const [pagination, setPagination] = useState({
     page: 1,
     perPage: 5,
@@ -27,18 +29,22 @@ export const Menu = () => {
     });
   }
   useEffect(() => {
-    getAllMenu(pagination.page,pagination.perPage,(res) => {
+    getAllMenu(pagination.page,pagination.perPage,filterMenu,(res) => {
       setMenu(res.data?.Data)
       setPageMenu(res.data)
-      console.log(res.data)
     })
-  }, [pagination.page])
+  }, [pagination.page,filterMenu])
+  console.log(menu)
     return (
-      <div className="py-6">
+      <div id="menu" className="py-6">
+        <h1 className="mb-6 text-3xl font-bold text-center text-red-700">Daftar Menu Makanan</h1>
+          <input className="w-[30%] mb-3 input input-bordered" type="text" placeholder="Cari Berdasarkan Nama Makanan" onChange={(e) => setFilterMenu(e.target.value)} />
         <div className="flex flex-col items-center justify-center gap-4 py-2 lg:flex-row">
-          {menu.map((item) => (
-            <CardMenu key={item.id} img={item.imageUrl} title={item.name} desc={item.description} />
-          ))}
+          {menu?.length > 0 ?
+          menu.map((item) => (
+            <CardMenu key={item.id} id={item.id} img={item.imageUrl} title={item.name} desc={item.description} />
+          )) : ( <div><p>Menu Tidak Ditemukan</p></div> )
+          }
         </div>
         <div className="flex justify-center py-3 join">
           <button onClick={handlePreviousPage} disabled={pageMenu.previousPage === 0} className="join-item btn">«</button>

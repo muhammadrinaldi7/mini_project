@@ -3,6 +3,7 @@ import { Dashboard } from "../../pages/Dashboard";
 import { Homepage } from "../../pages/Homepage";
 import { Login } from "../../pages/Login";
 import { Menu } from "../../pages/Menu";
+import { DetailMenu } from "../../pages/Menu/DetailMenu";
 import { Register } from "../../pages/Register";
 
 export const RouteList = [
@@ -19,8 +20,8 @@ export const RouteList = [
         element: <Menu />,
     },
     {
-        path: "/register",
-        element: <Register />,
+        path: "/menu/:id",
+        element: <DetailMenu />,
     },
     {
         path: "/register",

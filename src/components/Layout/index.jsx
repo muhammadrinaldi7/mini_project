@@ -6,7 +6,7 @@ export const LayoutPage = ({ children }) => {
         <>
         <div className="p-4 bg-gray-50">
             <Navbar />
-                <div className="container px-6 mx-auto my-auto bg-white">
+                <div className="container px-6 mx-auto mt-6 bg-white rounded-lg">
                     {children}
                 </div>
         </div>

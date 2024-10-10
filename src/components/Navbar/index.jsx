@@ -17,31 +17,34 @@ export const Navbar = () => {
         <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
             <li>
-            <a>Parent</a>
-            <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-            </ul>
+                <Link to="/" className="hover:bg-red-600 hover:text-white">Home</Link>
             </li>
-            <li><a>Item 3</a></li>
+            <li>
+                <Link to="/menu" className="hover:bg-red-600 hover:text-white">Menu</Link>
+            </li>
         </ul>
         </div>
-        <a className="text-xl btn btn-ghost">MeatGenkz</a>
+        <a className="text-xl btn btn-ghost"><h1>Mudo<span className="text-[#FF0000] italic">Genkz</span></h1></a>
     </div>
     <div className="hidden navbar-center lg:flex">
         <ul className="px-1 menu menu-horizontal">
-        <li><Link to="/">Home</Link></li>
         <li>
-            <Link to="/menu">Menu</Link>
+            <Link to="/" className="hover:bg-red-600 hover:text-white">Home</Link>
         </li>
+        <li>
+        {/* <a href="#menu" className="hover:bg-red-600 hover:text-white">Menu</a> */}
+            <Link to="/menu" className="hover:bg-red-600 hover:text-white">Menu</Link>
+        </li>
+        {localStorage.getItem('token') && <li>
+            <Link to="/dashboard" className="hover:bg-red-600 hover:text-white">Dashboard</Link>
+        </li>}
         </ul>
     </div>
     <div className="navbar-end">
         {localStorage.getItem('token') ? 
-        (<p onClick={handleLogout} className="btn btn-primary">Logout</p>):
-        (<Link to="/login"><button className="btn btn-primary">Login</button></Link>)}
+        (<p onClick={handleLogout} className="text-white bg-red-600 btn">Logout</p>):
+        (<Link to="/login"><button className="text-white bg-red-600 btn">Login</button></Link>)}
     </div>
     </div>
     )
