@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { CardMenu } from "../../components/Card"
 import { getAllMenu } from "../../services/MenuService"
+import { useParams } from "react-router-dom"
 
 export const Menu = () => {
   const [menu, setMenu] = useState([])
@@ -21,7 +22,7 @@ export const Menu = () => {
       page: pagination.page + 1,
     });
   }
-
+console.log(menu)
   const handlePreviousPage = () => {
     setPagination({
       ...pagination,
@@ -29,21 +30,24 @@ export const Menu = () => {
     });
   }
   useEffect(() => {
+   setLoading(true);
+   setTimeout(() => {
     getAllMenu(pagination.page,pagination.perPage,filterMenu,(res) => {
       setMenu(res.data?.Data)
       setPageMenu(res.data)
+      setLoading(false)
     })
+   },1500)
   }, [pagination.page,filterMenu])
-  console.log(menu)
     return (
       <div id="menu" className="py-6">
         <h1 className="mb-6 text-3xl font-bold text-center text-red-700">Daftar Menu Makanan</h1>
           <input className="w-[30%] mb-3 input input-bordered" type="text" placeholder="Cari Berdasarkan Nama Makanan" onChange={(e) => setFilterMenu(e.target.value)} />
         <div className="flex flex-col items-center justify-center gap-4 py-2 lg:flex-row">
-          {menu?.length > 0 ?
+          {loading ? <span className="text-red-700 py-36 loading loading-infinity loading-lg"></span> : menu?.length > 0 ?
           menu.map((item) => (
             <CardMenu key={item.id} id={item.id} img={item.imageUrl} title={item.name} desc={item.description} />
-          )) : ( <div><p>Menu Tidak Ditemukan</p></div> )
+          )) : ( <div className="text-black py-36"><p>Menu Tidak Ditemukan</p></div> )
           }
         </div>
         <div className="flex justify-center py-3 join">

@@ -23,6 +23,9 @@ export const Navbar = () => {
             <li>
                 <Link to="/menu" className="hover:bg-red-600 hover:text-white">Menu</Link>
             </li>
+            <li>
+                <Link to="/user" className="hover:bg-red-600 hover:text-white">Pengguna</Link>
+            </li>
         </ul>
         </div>
         <a className="text-xl btn btn-ghost"><h1>Mudo<span className="text-[#FF0000] italic">Genkz</span></h1></a>
@@ -33,8 +36,10 @@ export const Navbar = () => {
             <Link to="/" className="hover:bg-red-600 hover:text-white">Home</Link>
         </li>
         <li>
-        {/* <a href="#menu" className="hover:bg-red-600 hover:text-white">Menu</a> */}
             <Link to="/menu" className="hover:bg-red-600 hover:text-white">Menu</Link>
+        </li>
+        <li>
+            <Link to="/user" className="hover:bg-red-600 hover:text-white">Pengguna</Link>
         </li>
         {localStorage.getItem('token') && <li>
             <Link to="/dashboard" className="hover:bg-red-600 hover:text-white">Dashboard</Link>

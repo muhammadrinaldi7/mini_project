@@ -26,25 +26,25 @@ export const Homepage = () => {
           <div className="grid grid-cols-1 gap-6 px-12 md:grid-cols-2 lg:grid-cols-4">
             <div className='flex flex-col items-center gap-4 p-5 border-2 border-red-700 border-solid rounded-lg'>
                 <FontAwesomeIcon icon={faCoffee} className="text-5xl text-red-700"/>
-                <h1>Breakfast</h1>
+                <h1 className="font-sans text-lg font-bold">Breakfast</h1>
                 <p className="text-sm text-center">Menu sarapan tradisional indonesia dengan rasa yang khas yang membuatnya semakin menyenangkan.</p>
                 <Link to={"/menu"} className="font-medium text-red-700 hover:text-red-500">Explore Menu</Link>
             </div>
             <div className='flex flex-col items-center gap-4 p-5 border-2 border-red-700 border-solid rounded-lg'>
                 <FontAwesomeIcon icon={faCoffee} className="text-5xl text-red-700"/>
-                <h1>Breakfast</h1>
+                 <h1 className="font-sans text-lg font-bold">Breakfast</h1>
                 <p className="text-sm text-center">Menu sarapan tradisional indonesia dengan rasa yang khas yang membuatnya semakin menyenangkan.</p>
                 <Link to={"/menu"} className="font-medium text-red-700 hover:text-red-500">Explore Menu</Link>
             </div>
             <div className='flex flex-col items-center gap-4 p-5 border-2 border-red-700 border-solid rounded-lg'>
                 <FontAwesomeIcon icon={faCoffee} className="text-5xl text-red-700"/>
-                <h1>Breakfast</h1>
+                 <h1 className="font-sans text-lg font-bold">Breakfast</h1>
                 <p className="text-sm text-center">Menu sarapan tradisional indonesia dengan rasa yang khas yang membuatnya semakin menyenangkan.</p>
                 <Link to={"/menu"} className="font-medium text-red-700 hover:text-red-500">Explore Menu</Link>
             </div>
             <div className='flex flex-col items-center gap-4 p-5 border-2 border-red-700 border-solid rounded-lg'>
                 <FontAwesomeIcon icon={faCoffee} className="text-5xl text-red-700"/>
-                <h1>Breakfast</h1>
+                 <h1 className="font-sans text-lg font-bold">Breakfast</h1>
                 <p className="text-sm text-center">Menu sarapan tradisional indonesia dengan rasa yang khas yang membuatnya semakin menyenangkan.</p>
                 <Link to={"/menu"} className="font-medium text-red-700 hover:text-red-500">Explore Menu</Link>
             </div>

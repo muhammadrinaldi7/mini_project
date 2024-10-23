@@ -4,6 +4,7 @@ import { Homepage } from "../../pages/Homepage";
 import { Login } from "../../pages/Login";
 import { Menu } from "../../pages/Menu";
 import { DetailMenu } from "../../pages/Menu/DetailMenu";
+import { Pengguna } from "../../pages/Pengguna";
 import { Register } from "../../pages/Register";
 
 export const RouteList = [
@@ -18,6 +19,10 @@ export const RouteList = [
     {
         path: "/menu",
         element: <Menu />,
+    },
+    {
+        path: "/user",
+        element: <Pengguna />,
     },
     {
         path: "/menu/:id",
